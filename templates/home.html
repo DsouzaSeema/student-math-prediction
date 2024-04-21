@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Math Score Prediction</title>
+</head>
+<body>
+    <h1 style="color: teal;">Student Math Score Prediction</h1>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+    <label for="gender">Gender:</label>
+    <select name="gender" placeholder='gender'>
+        <option class="placeholder" selected disabled value="">Select your Gender</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select><br><br>
+    <label for="race_ethnicity">Race Ethnicity:</label>
+    <select name="race_ethnicity" placeholder='race_ethnicity'>
+        <option class="placeholder" selected disabled value="">Select Ethnicity</option>
+        <option value="group A">Group A</option>
+        <option value="group B">Group B</option>
+        <option value="group C">Group C</option>
+        <option value="group D">Group D</option>
+        <option value="group E">Group E</option>
+    </select><br><br>
+    <label for="parental_level_of_education">Parental Level Of Education:</label>
+    <select name="parental_level_of_education" placeholder='parental_level_of_education'>
+        <option class="placeholder" selected disabled value="">Select Parent Education</option>
+        <option value="associate's degree">associate's degree</option>
+        <option value="bachelor's degree">bachelor's degree</option>
+        <option value="high school">high school</option>
+        <option value="master's degree">master's degree</option>
+        <option value="some college">some college</option>
+        <option value="some high school">some high school</option>
+    </select><br><br>
+    <label for="lunch">Lunch:</label>
+    <select name="lunch" placeholder='lunch'>
+        <option class="placeholder" selected disabled value="">Select Lunch Type</option>
+        <option value="free/reduced">free/reduced</option>
+        <option value="standard">standard</option>
+    </select><br><br>
+    <label for="test_preparation_course">Test Preparation Course:</label>
+    <select name="test_preparation_course" placeholder='test_preparation_course'>
+        <option class="placeholder" selected disabled value="">Select Test_course</option>
+        <option value="none">none</option>
+        <option value="completed">completed</option>
+    </select><br><br>
+    <label for=reading_score>Reading Score out of 100</label>
+    <input type="number" name="reading_score"
+                placeholder="Enter your Reading Score" min='0' max='100' /><br><br>
+    <label for=writing_score>Writing Score out of 100</label>
+    <input type="number" name="writing_score"
+                placeholder="Enter your writing Score" min='0' max='100' /><br><br>
+
+    <input type="submit">Predict the Math Score</input><br><br>
+</form>
+<h2>THE PREDICTED  SCORE  IS  {{result}}</h2>
+</body>
+</html>
